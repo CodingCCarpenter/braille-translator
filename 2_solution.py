@@ -20,14 +20,23 @@ class solution:
     @staticmethod
     def solution(n, b):
         k = len(n)
-        x = ''.join(sorted(n, reverse=True))
-        y = ''.join(sorted(n))
-        x_int = int(x, b)
-        y_int = int(y, b)
-        z = str(x_int - y_int).zfill(k)
+        minion_list = []
+
+        while n not in minion_list:
+            x = ''.join(sorted(n, reverse=True))
+            y = ''.join(sorted(n))
+            x_int = int(x, b)
+            y_int = int(y, b)
+            z = str(x_int - y_int).zfill(k)
+            minion_list.append(z)
+            n = z
+            return (n)
+        else:
+            return len(minion_list)
 
 
 
-        print(n, b, k, x, y, z)
+
+        print(n, b, k, x, y, z, minion_list)
 
 print(solution.solution('243', 5))
