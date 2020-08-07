@@ -16,11 +16,18 @@
 """
 
 class solution:
+    # making solution able to be called directly on class instead of on instance of class
     @staticmethod
     def solution(n, b):
         k = len(n)
-        x = sorted(n, reverse=True)
-        y = sorted(n)
-        return n, b, k
+        x = ''.join(sorted(n, reverse=True))
+        y = ''.join(sorted(n))
+        x_int = int(x, b)
+        y_int = int(y, b)
+        z = str(x_int - y_int).zfill(k)
+
+
+
+        print(n, b, k, x, y, z)
 
 print(solution.solution('243', 5))
