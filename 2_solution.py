@@ -23,20 +23,25 @@ class solution:
         minion_list = []
 
         while n not in minion_list:
-            x = ''.join(sorted(n, reverse=True))
-            y = ''.join(sorted(n))
-            x_int = int(x, b)
-            y_int = int(y, b)
-            z = str(x_int - y_int).zfill(k)
-            minion_list.append(z)
-            n = z
-            return (n)
+            # adding n to the minion list
+            minion_list.append(n)
+            x = ''.join(sorted(int(n, b), reverse=True))
+            y = ''.join(sorted(int(n, b)))
+            # converting to base 10 to subtract
+            x_int = int(x, 10)
+            y_int = int(y, 10)
+            z_str_base_10 = str(x_int - y_int)
+            z_int_base_b = int(z_str_base_10, b)
+            n = str(z_int_base_b)
+            print(n)
         else:
             return len(minion_list)
 
+print(solution.solution('1211', 10))
 
 
 
-        print(n, b, k, x, y, z, minion_list)
 
-print(solution.solution('243', 5))
+      
+
+print(solution.solution('210022', 3))
