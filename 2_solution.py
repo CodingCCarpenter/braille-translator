@@ -19,6 +19,13 @@ class solution:
     # making solution able to be called directly on class instead of on instance of class
     @staticmethod
     def solution(n, b):
+        """
+        SYNTAX solution(n, b). Static method on a 
+        class called 'solution' that takes a integer minion ID (n) with a 
+        length of k, and a base of b. The method will use this
+        process to create new minion IDs until the algorithm fails to 
+        create new unique IDs
+        """
         k = len(n)
         minion_list = []
 
