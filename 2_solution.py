@@ -25,7 +25,15 @@ class solution:
         while n not in minion_list:
             # adding n to the minion list
             minion_list.append(n)
-            x = ''.join(sorted(int(n, b), reverse=True))
+            x = ''.join(sorted(n, reverse=True))
+            y = ''.join(sorted(n))
+            pre_z = int(x, b)-int(y, b)
+            str_z = str(pre_z)
+            base_3_z = int(str_z, b)
+            z = str(base_3_z).zfill(k)
+            n = z
+            # Below was taken out to implement scratchpad ideas
+            """x = ''.join(sorted(int(n, b), reverse=True))
             y = ''.join(sorted(int(n, b)))
             # converting to base 10 to subtract
             x_int = int(x, 10)
@@ -33,7 +41,9 @@ class solution:
             z_str_base_10 = str(x_int - y_int)
             z_int_base_b = int(z_str_base_10, b)
             n = str(z_int_base_b)
-            print(n)
+            print(n) """
+            print(n,x,y,pre_z, z)
+            print(minion_list)
         else:
             return len(minion_list)
 
